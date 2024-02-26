@@ -1,0 +1,29 @@
+{# templates/departures/list.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Departures{% endblock %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>Line</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for departure in departures %}
+            <tr>
+                <td>{{ departure.line }}</td>
+                <td>{{ departure.destination }}</td>
+                <td>{{ departure.time}}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No departures found for this route.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
