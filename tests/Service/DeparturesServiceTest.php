@@ -10,7 +10,7 @@ use Mockery;
 
 class DeparturesServiceTest extends TestCase
 {
-    public function testGetFilteredDepartures()
+    public function testGetFilteredDepartures(): void
     {
         $departureRepository = Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
@@ -42,7 +42,7 @@ class DeparturesServiceTest extends TestCase
         ], $result);
     }
 
-    public function testGetFilteredDeparturesWithEmptyData()
+    public function testGetFilteredDeparturesWithEmptyData(): void
     {
         $departureRepository = Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([]);
@@ -54,7 +54,7 @@ class DeparturesServiceTest extends TestCase
         $this->assertEquals([], $result);
     }
 
-    public function testGetFilteredDeparturesWithAllDataMatchingFilter()
+    public function testGetFilteredDeparturesWithAllDataMatchingFilter(): void
     {
         $departureRepository = Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
@@ -92,7 +92,7 @@ class DeparturesServiceTest extends TestCase
         ], $result);
     }
 
-    public function testGetFilteredDeparturesWithSomeDataMatchingFilter()
+    public function testGetFilteredDeparturesWithSomeDataMatchingFilter(): void
     {
         $departureRepository = Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
@@ -124,7 +124,7 @@ class DeparturesServiceTest extends TestCase
         ], $result);
     }
 
-    public function testGetFilteredDeparturesWithNoDataMatchingFilter()
+    public function testGetFilteredDeparturesWithNoDataMatchingFilter(): void
     {
         $departureRepository = Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([

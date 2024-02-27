@@ -10,7 +10,7 @@ use Mockery;
 
 class TransportApiClientRepositoryTest extends TestCase
 {
-    public function testFindDeparturesByStartAndEndStop()
+    public function testFindDeparturesByStartAndEndStop(): void
     {
         $response = Mockery::mock(ResponseInterface::class);
         $response->shouldReceive('getStatusCode')->andReturn(200);
@@ -40,7 +40,7 @@ class TransportApiClientRepositoryTest extends TestCase
         ], $result);
     }
 
-    public function testFindDeparturesByStartAndEndStopWithHttpError()
+    public function testFindDeparturesByStartAndEndStopWithHttpError(): void
     {
         $response = Mockery::mock(ResponseInterface::class);
         $response->shouldReceive('getStatusCode')->andReturn(500);
@@ -56,7 +56,7 @@ class TransportApiClientRepositoryTest extends TestCase
         $repository->findDeparturesByStartAndEndStop('75', 'Zawadzkiego Zośki');
     }
 
-    public function testFindDeparturesByStartAndEndStopWithException()
+    public function testFindDeparturesByStartAndEndStopWithException(): void
     {
         $client = Mockery::mock(HttpClientInterface::class);
         $client->shouldReceive('request')->andThrow(\Exception::class, 'API request failed');
@@ -69,7 +69,7 @@ class TransportApiClientRepositoryTest extends TestCase
         $repository->findDeparturesByStartAndEndStop('75', 'Zawadzkiego Zośki');
     }
 
-    public function testFindDeparturesByStartAndEndStopWithEmptyResponse()
+    public function testFindDeparturesByStartAndEndStopWithEmptyResponse(): void
     {
         $response = Mockery::mock(ResponseInterface::class);
         $response->shouldReceive('getStatusCode')->andReturn(200);
@@ -85,7 +85,7 @@ class TransportApiClientRepositoryTest extends TestCase
         $this->assertEquals([], $result);
     }
 
-    public function testFindDeparturesByStartAndEndStopWithUnexpectedDataFormat()
+    public function testFindDeparturesByStartAndEndStopWithUnexpectedDataFormat(): void
     {
         $response = Mockery::mock(ResponseInterface::class);
         $response->shouldReceive('getStatusCode')->andReturn(200);
