@@ -14,7 +14,9 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 final readonly class DeparturesService
 {
-    public function __construct(private DepartureRepositoryInterface $departureRepository){}
+    public function __construct(private DepartureRepositoryInterface $departureRepository)
+    {
+    }
 
     /**
      * @return Departure[]
@@ -24,13 +26,14 @@ final readonly class DeparturesService
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public function getFilteredDepartures(string $startStopId, string $endStopName): array {
+    public function getFilteredDepartures(string $startStopId, string $endStopName): array
+    {
         $departuresData = $this->departureRepository->findDeparturesByStartAndEndStop($startStopId, $endStopName);
         $filteredDepartures = [];
 
         foreach ($departuresData as $departure) {
             if ($departure['destination'] === $endStopName) {
-                $filteredDepartures[] = new Departure (
+                $filteredDepartures[] = new Departure(
                     time: $departure['time'],
                     line: $departure['line'],
                     destination: $departure['destination'],
@@ -38,7 +41,7 @@ final readonly class DeparturesService
                 );
             }
         }
-        
+
         return $filteredDepartures;
     }
 }
