@@ -12,7 +12,7 @@ final class DepartureController extends AbstractController
     public function __construct(private readonly DeparturesService $departuresService){}
 
     #[Route('/departure/{startStopId}/{endStopName}')]
-    public function departures(string $startStopId, string $endStopName) : Response {
+    public function departures(string $startStopId, string $endStopName): Response {
         $result = $this->departuresService->getFilteredDepartures($startStopId, $endStopName);
 
         return $this->render('departures/list.html.twig', [
