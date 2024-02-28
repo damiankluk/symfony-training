@@ -11,6 +11,7 @@
 /var/
 /vendor/
 /node_modules/
+/tools/php-cs-fixer/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

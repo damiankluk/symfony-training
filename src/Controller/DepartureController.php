@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Service\DeparturesService;
@@ -9,10 +11,13 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class DepartureController extends AbstractController
 {
-    public function __construct(private readonly DeparturesService $departuresService){}
+    public function __construct(private readonly DeparturesService $departuresService)
+    {
+    }
 
     #[Route('/departure/{startStopId}/{endStopName}')]
-    public function departures(string $startStopId, string $endStopName) : Response {
+    public function departures(string $startStopId, string $endStopName): Response
+    {
         $result = $this->departuresService->getFilteredDepartures($startStopId, $endStopName);
 
         return $this->render('departures/list.html.twig', [
