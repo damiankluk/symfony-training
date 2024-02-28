@@ -72,7 +72,7 @@ class TransportApiClientRepositoryTest extends TestCase
     public function testFindDeparturesByStartAndEndStopWithEmptyResponse(): void
     {
         $response = \Mockery::mock(ResponseInterface::class);
-        $response->shouldReceive('getStatusCode')->andReturn(200);
+        $response->shouldReceive('getStatusCode')->andReturn(Response::HTTP_OK);
         $response->shouldReceive('toArray')->andReturn([]);
 
         $client = \Mockery::mock(HttpClientInterface::class);
@@ -88,7 +88,7 @@ class TransportApiClientRepositoryTest extends TestCase
     public function testFindDeparturesByStartAndEndStopWithUnexpectedDataFormat(): void
     {
         $response = \Mockery::mock(ResponseInterface::class);
-        $response->shouldReceive('getStatusCode')->andReturn(200);
+        $response->shouldReceive('getStatusCode')->andReturn(Response::HTTP_OK);
         $response->shouldReceive('toArray')->andReturn([
             'unexpected_key' => 'unexpected_value',
         ]);
