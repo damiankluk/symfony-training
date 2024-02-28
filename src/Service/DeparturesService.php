@@ -20,6 +20,7 @@ final readonly class DeparturesService
 
     /**
      * @return Departure[]
+     *
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
      * @throws RedirectionExceptionInterface

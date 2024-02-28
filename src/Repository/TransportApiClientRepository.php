@@ -12,9 +12,6 @@ final readonly class TransportApiClientRepository implements DepartureRepository
     {
     }
 
-    /**
-     * @inheritdoc
-     */
     public function findDeparturesByStartAndEndStop(string $startStopId, string $endStopName): array
     {
         try {
@@ -23,8 +20,8 @@ final readonly class TransportApiClientRepository implements DepartureRepository
             throw new \Exception($exception->getMessage());
         }
 
-        if ($response->getStatusCode() !== 200) {
-            throw new \Exception("API CALL failed with status code: ". $response->getStatusCode());
+        if (200 !== $response->getStatusCode()) {
+            throw new \Exception('API CALL failed with status code: '.$response->getStatusCode());
         }
 
         return $response->toArray();
