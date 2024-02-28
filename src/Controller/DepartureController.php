@@ -25,7 +25,7 @@ final class DepartureController extends AbstractController
         ]);
     }
 
-    #[Route('/departure/{startStopId}/{endStopName}', name: 'departures')]
+    #[Route(path: '/departure/{startStopId}/{endStopName}', name: 'departures')]
     public function departures(string $startStopId, string $endStopName): Response
     {
         $result = $this->departuresService->getFilteredDepartures($startStopId, $endStopName);

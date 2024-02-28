@@ -4,6 +4,7 @@ namespace App\Tests\Repository;
 
 use App\Repository\TransportApiClientRepository;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -42,7 +43,7 @@ class TransportApiClientRepositoryTest extends TestCase
     public function testFindDeparturesByStartAndEndStopWithHttpError(): void
     {
         $response = \Mockery::mock(ResponseInterface::class);
-        $response->shouldReceive('getStatusCode')->andReturn(500);
+        $response->shouldReceive('getStatusCode')->andReturn(Response::HTTP_INTERNAL_SERVER_ERROR);
 
         $client = \Mockery::mock(HttpClientInterface::class);
         $client->shouldReceive('request')->andReturn($response);
@@ -58,7 +59,7 @@ class TransportApiClientRepositoryTest extends TestCase
     public function testFindDeparturesByStartAndEndStopWithException(): void
     {
         $client = \Mockery::mock(HttpClientInterface::class);
-        $client->shouldReceive('request')->andThrow(\Exception::class, 'API request failed');
+        $client->shouldReceive('request')->andThrow(\RuntimeException::class, 'API request failed');
 
         $repository = new TransportApiClientRepository($client);
 
