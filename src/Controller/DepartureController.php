@@ -15,6 +15,16 @@ final class DepartureController extends AbstractController
     {
     }
 
+    #[Route('/')]
+    public function homepage(): Response
+    {
+        $result = $this->departuresService->getFilteredDepartures('75', 'Zawadzkiego Zośki');
+
+        return $this->render('departures/list.html.twig', [
+            'departures' => $result,
+        ]);
+    }
+
     #[Route('/departure/{startStopId}/{endStopName}')]
     public function departures(string $startStopId, string $endStopName): Response
     {
