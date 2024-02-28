@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  web:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: apache
+    depends_on:
+      - cli
+  db:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: mysql
+  cli:
+    image: ${COMPOSE_PROJECT_NAME_SAFE}_cli
+    build: services/cli
