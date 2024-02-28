@@ -13,7 +13,7 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 interface DepartureRepositoryInterface
 {
     /**
-     * @return array<array>
+     * @return array<array<string|int, string>>
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
      * @throws RedirectionExceptionInterface

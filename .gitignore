@@ -1,7 +1,5 @@
 
 ###> symfony/framework-bundle ###
-.env
-.env.test
 .docksal
 /.env.local
 /.env.local.php
