@@ -14,6 +14,7 @@ interface DepartureRepositoryInterface
 {
     /**
      * @return array<array<string|int, string>>
+     *
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
      * @throws RedirectionExceptionInterface
