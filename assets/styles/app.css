@@ -1,3 +1,21 @@
 body {
     background-color: skyblue;
 }
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+    font-family: 'Arial', sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
