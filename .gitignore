@@ -1,36 +1,36 @@
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
-/node_modules/
-/tools/php-cs-fixer/vendor/
+/app/.env.local
+/app/.env.local.php
+/app/.env.*.local
+/app/config/secrets/prod/prod.decrypt.private.php
+/app/public/bundles/
+/app/var/
+/app/vendor/
+/app/node_modules/
+/app/tools/php-cs-fixer/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
+/app/phpunit.xml/app
+/app.phpunit.result.cache
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###
-.phpunit.result.cache
-/phpunit.xml
+/app/.phpunit.result.cache
+/app/phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/asset-mapper ###
-/public/assets/
-/assets/vendor/
+/app/public/assets/
+/app/assets/vendor/
 ###< symfony/asset-mapper ###
 
 ###> php-cs-fixer/shim ###
-/.php-cs-fixer.php
-/.php-cs-fixer.cache
+/app/.php-cs-fixer.php
+/app/.php-cs-fixer.cache
 ###< php-cs-fixer/shim ###
 
 ###> phpstan/phpstan ###
-phpstan.neon
+/app/phpstan.neon
 ###< phpstan/phpstan ###
