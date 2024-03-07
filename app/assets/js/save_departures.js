@@ -5,9 +5,9 @@ document.querySelectorAll('.add-button').forEach(button => {
         const destination = row.querySelector('td:nth-child(2)').textContent;
         const time = row.querySelector('td:nth-child(3)').textContent;
         const stop = row.getAttribute('data-stop');
-        const data = { line, destination, time };
+        const data = { line, destination, time, stop };
 
-        const response = await fetch('/save-departures', {
+        const response = await fetch('/save-departure', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

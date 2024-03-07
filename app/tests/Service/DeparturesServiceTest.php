@@ -4,7 +4,7 @@ namespace App\Tests\Service;
 
 use App\Model\Departure;
 use App\Repository\DepartureRepositoryInterface;
-use App\Service\DeparturesService;
+use App\Service\DepartureService;
 use PHPUnit\Framework\TestCase;
 
 class DeparturesServiceTest extends TestCase
@@ -27,7 +27,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DeparturesService($departureRepository);
+        $service = new DepartureService($departureRepository);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -46,7 +46,7 @@ class DeparturesServiceTest extends TestCase
         $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
         $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([]);
 
-        $service = new DeparturesService($departureRepository);
+        $service = new DepartureService($departureRepository);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -71,7 +71,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DeparturesService($departureRepository);
+        $service = new DepartureService($departureRepository);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -109,7 +109,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DeparturesService($departureRepository);
+        $service = new DepartureService($departureRepository);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -141,7 +141,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DeparturesService($departureRepository);
+        $service = new DepartureService($departureRepository);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
