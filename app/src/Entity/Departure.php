@@ -77,5 +77,4 @@ class Departure
 
         return $this;
     }
-
 }

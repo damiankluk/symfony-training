@@ -8,6 +8,7 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
 ->setRules([
 '@Symfony' => true,
+'@PER' => true,
 ])
 ->setFinder($finder)
 ;

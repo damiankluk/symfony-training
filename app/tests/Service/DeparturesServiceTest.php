@@ -5,14 +5,23 @@ namespace App\Tests\Service;
 use App\Model\Departure;
 use App\Repository\DepartureRepositoryInterface;
 use App\Service\DepartureService;
+use Doctrine\ORM\EntityManagerInterface;
 use PHPUnit\Framework\TestCase;
 
 class DeparturesServiceTest extends TestCase
 {
+    private DepartureRepositoryInterface|\Mockery\MockInterface $departureRepository;
+    private EntityManagerInterface|\Mockery\MockInterface $entityManager;
+
+    protected function setUp(): void
+    {
+        $this->departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
+        $this->entityManager = \Mockery::mock(EntityManagerInterface::class);
+    }
+
     public function testGetFilteredDepartures(): void
     {
-        $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
-        $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
+        $this->departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
             [
                 'time' => '3 min',
                 'line' => '14',
@@ -27,7 +36,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DepartureService($departureRepository);
+        $service = new DepartureService($this->departureRepository, $this->entityManager);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -43,10 +52,9 @@ class DeparturesServiceTest extends TestCase
 
     public function testGetFilteredDeparturesWithEmptyData(): void
     {
-        $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
-        $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([]);
+        $this->departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([]);
 
-        $service = new DepartureService($departureRepository);
+        $service = new DepartureService($this->departureRepository, $this->entityManager);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -55,8 +63,7 @@ class DeparturesServiceTest extends TestCase
 
     public function testGetFilteredDeparturesWithAllDataMatchingFilter(): void
     {
-        $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
-        $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
+        $this->departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
             [
                 'time' => '3 min',
                 'line' => '14',
@@ -71,7 +78,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DepartureService($departureRepository);
+        $service = new DepartureService($this->departureRepository, $this->entityManager);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -93,8 +100,7 @@ class DeparturesServiceTest extends TestCase
 
     public function testGetFilteredDeparturesWithSomeDataMatchingFilter(): void
     {
-        $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
-        $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
+        $this->departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
             [
                 'time' => '3 min',
                 'line' => '14',
@@ -109,7 +115,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DepartureService($departureRepository);
+        $service = new DepartureService($this->departureRepository, $this->entityManager);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 
@@ -125,8 +131,7 @@ class DeparturesServiceTest extends TestCase
 
     public function testGetFilteredDeparturesWithNoDataMatchingFilter(): void
     {
-        $departureRepository = \Mockery::mock(DepartureRepositoryInterface::class);
-        $departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
+        $this->departureRepository->shouldReceive('findDeparturesByStartAndEndStop')->andReturn([
             [
                 'time' => '3 min',
                 'line' => '14',
@@ -141,7 +146,7 @@ class DeparturesServiceTest extends TestCase
             ],
         ]);
 
-        $service = new DepartureService($departureRepository);
+        $service = new DepartureService($this->departureRepository, $this->entityManager);
 
         $result = $service->getFilteredDepartures('75', 'Zawadzkiego Zośki');
 

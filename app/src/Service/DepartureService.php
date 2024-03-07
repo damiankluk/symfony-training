@@ -14,11 +14,10 @@ final readonly class DepartureService
     public function __construct(
         private DepartureRepositoryInterface $departureRepository,
         private EntityManagerInterface $entityManager
-    ) {
-    }
+    ) {}
 
     /**
-     * @return Departure[]
+     * @return array<int<0, max>, DepartureModel>
      */
     public function getFilteredDepartures(string $startStopId, string $endStopName): array
     {
@@ -39,7 +38,16 @@ final readonly class DepartureService
         return $filteredDepartures;
     }
 
-
+    /**
+     * @param array{
+     *     stop: string,
+     *     destination: string,
+     *     line: string,
+     *     time: string
+     * } $data
+     *
+     * @throws \Exception
+     */
     public function saveDeparture(array $data): Departure
     {
         try {

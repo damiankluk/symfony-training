@@ -9,6 +9,5 @@ class Departure
         public string $line,
         public string $destination,
         public string $stop
-    ) {
-    }
+    ) {}
 }
