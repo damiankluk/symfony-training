@@ -4,34 +4,38 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Departure;
 use App\Service\DeparturesService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 final class DepartureController extends AbstractController
 {
-    public function __construct(private readonly DeparturesService $departuresService)
+    public function __construct()
     {
     }
 
-    #[Route(path: '/', name: 'homepage')]
-    public function homepage(): Response
+    #[Route(path: '/save-departure', name: 'save-departure')]
+    public function saveAjax(Request $request, EntityManagerInterface $entityManager): JsonResponse
     {
-        $result = $this->departuresService->getFilteredDepartures('75', 'Zawadzkiego Zośki');
+        $data = json_decode($request->getContent(), true);
 
-        return $this->render('departures/list.html.twig', [
-            'departures' => $result,
-        ]);
-    }
+        $departure = new Departure();
+        $departure->setBusStop($data['line']);
+        $departure->setDestination($data['destination']);
+        try {
+            $departure->setTime(new \DateTimeImmutable($data['time']));
+        } catch (\Exception $e) {
+            return new JsonResponse(['status' => 'error : '.$e->getMessage()], Response::HTTP_BAD_REQUEST);
+        }
 
-    #[Route(path: '/departure/{startStopId}/{endStopName}', name: 'departures')]
-    public function departures(string $startStopId, string $endStopName): Response
-    {
-        $result = $this->departuresService->getFilteredDepartures($startStopId, $endStopName);
+        $entityManager->persist($departure);
+        $entityManager->flush();
 
-        return $this->render('departures/list.html.twig', [
-            'departures' => $result,
-        ]);
+        return new JsonResponse(['status' => 'success'], Response::HTTP_OK);
     }
 }
