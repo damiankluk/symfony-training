@@ -30,4 +30,30 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <h3>Selected Departures</h3>
+    <div id="selected-departures">
+        <table>
+            <thead>
+            <tr>
+                <th>Line</th>
+                <th>Destination</th>
+                <th>Departure Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for savedDeparture in savedDepartures %}
+                <tr>
+                    <td>{{ savedDeparture.busLine }}</td>
+                    <td>{{ savedDeparture.destination }}</td>
+                    <td>{{ savedDeparture.time }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No saved departures found.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

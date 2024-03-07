@@ -11,38 +11,38 @@ class Departure
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $time = null;
+    private int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $busLine = null;
+    private string $time;
 
     #[ORM\Column(length: 255)]
-    private ?string $destination = null;
+    private string $busLine;
 
     #[ORM\Column(length: 255)]
-    private ?string $busStop = null;
+    private string $destination;
 
-    public function getId(): ?int
+    #[ORM\Column(length: 255)]
+    private string $busStop;
+
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getTime(): ?\DateTimeImmutable
+    public function getTime(): string
     {
         return $this->time;
     }
 
-    public function setTime(\DateTimeImmutable $time): static
+    public function setTime(string $time): static
     {
         $this->time = $time;
 
         return $this;
     }
 
-    public function getBusLine(): ?string
+    public function getBusLine(): string
     {
         return $this->busLine;
     }
@@ -54,7 +54,7 @@ class Departure
         return $this;
     }
 
-    public function getDestination(): ?string
+    public function getDestination(): string
     {
         return $this->destination;
     }
@@ -66,7 +66,7 @@ class Departure
         return $this;
     }
 
-    public function getBusStop(): ?string
+    public function getBusStop(): string
     {
         return $this->busStop;
     }
@@ -77,4 +77,5 @@ class Departure
 
         return $this;
     }
+
 }

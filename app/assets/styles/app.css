@@ -19,3 +19,14 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+h3 {
+    text-align: center;
+}
+.past-departure {
+    background-color: red;
+}
+.future-departure {
+    background-color: #98ea98;
+}
+

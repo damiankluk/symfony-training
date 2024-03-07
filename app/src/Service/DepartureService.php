@@ -39,6 +39,7 @@ final readonly class DepartureService
         return $filteredDepartures;
     }
 
+
     public function saveDeparture(array $data): Departure
     {
         try {
@@ -46,7 +47,7 @@ final readonly class DepartureService
                 ->setBusStop($data['stop'])
                 ->setDestination($data['destination'])
                 ->setBusLine($data['line'])
-                ->setTime(new \DateTimeImmutable($data['time']));
+                ->setTime($data['time']);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
@@ -55,5 +56,13 @@ final readonly class DepartureService
         $this->entityManager->flush();
 
         return $departure;
+    }
+
+    /**
+     * @return Departure[]
+     */
+    public function getSavedDepartures(): array
+    {
+        return $this->entityManager->getRepository(Departure::class)->findAll();
     }
 }

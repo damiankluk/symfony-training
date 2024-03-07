@@ -18,10 +18,11 @@ class HomepageController extends AbstractController
     #[Route(path: '/', name: 'homepage')]
     public function homepage(): Response
     {
-        $result = $this->departuresService->getFilteredDepartures('75', 'Zawadzkiego Zośki');
-
+        $departures = $this->departuresService->getFilteredDepartures('75', 'Zawadzkiego Zośki');
+        $savedDepartures = $this->departuresService->getSavedDepartures();
         return $this->render('departures/list.html.twig', [
-            'departures' => $result,
+            'departures' => $departures,
+            'savedDepartures' => $savedDepartures,
         ]);
     }
 }
