@@ -272,6 +272,7 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/stimulus-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />

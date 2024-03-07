@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\DepartureService;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ final class DepartureController extends AbstractController
     public function __construct() {}
 
     #[Route(path: '/save-departure', name: 'save-departure')]
-    public function saveAjax(Request $request, DepartureService $departureService): JsonResponse
+    public function saveAjax(Request $request, DepartureService $departureService, LoggerInterface $logger): JsonResponse
     {
         $ajaxResponseDecoded = json_decode($request->getContent(), true);
 
@@ -33,6 +34,8 @@ final class DepartureController extends AbstractController
         try {
             $departureService->saveDeparture($data);
         } catch (\Exception $e) {
+            $logger->error('Error occurred while saving departure', ['error' => $e->getMessage()]);
+
             return new JsonResponse(['status' => 'error : ' . $e->getMessage()], Response::HTTP_BAD_REQUEST);
         }
 
