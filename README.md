@@ -3,7 +3,6 @@
 ## Requirements
 - Makefile
 - Docker
-- Docksal
 ## Installation
 
 Follow the steps below to install and run the project:
@@ -12,8 +11,23 @@ Follow the steps below to install and run the project:
     ```
     git clone git@github.com:damiankluk/symfony-training.git symfony-training
     ```
-
-2. **Build docker containers**
+   
+2. **Go to the project directory**
+    ```
+    cd symfony-training
+    ```
+   
+3. **Build docker containers**
     ```
     make build
+    ```
+   
+4. **Set containers up**
+    ```
+    make up
+    ```
+   
+5. **Go to the web app**
+    ```
+    localhost:80
     ```
