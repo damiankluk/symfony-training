@@ -6,6 +6,8 @@ bash:
 	docker exec -it symfony-training-php-1 bash
 composer-install:
 	docker exec -it symfony-training-php-1 composer install
+db-migrate:
+	docker exec -it symfony-training-php-1 php bin/console doctrine:migrations:migrate
 phpunit:
 	docker exec -it symfony-training-php-1 ./vendor/bin/phpunit
 phpstan:

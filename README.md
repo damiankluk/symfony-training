@@ -30,7 +30,11 @@ Follow the steps below to install and run the project:
     ```
     make composer-install
     ```
-5. **Go to the web app**
+6. **Create database**
+    ```
+    make db-migrate
+    ```
+7. **Go to the web app**
     ```
     localhost:80
     ```
