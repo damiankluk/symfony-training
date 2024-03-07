@@ -157,14 +157,10 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/config" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/asset-mapper" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/expression-language" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/messenger" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/web-link" />
@@ -187,12 +183,10 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/property-info" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/cache-contracts" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/stimulus-bundle" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/doctrine-bridge" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/http-foundation" />
@@ -255,9 +249,7 @@
       <path value="$PROJECT_DIR$/app/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/app/vendor/phpstan/phpstan" />
       <path value="$PROJECT_DIR$/app/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/app/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/app/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/app/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/app/vendor/phpunit/php-invoker" />
       <path value="$PROJECT_DIR$/app/vendor/phpunit/php-code-coverage" />
@@ -269,20 +261,17 @@
       <path value="$PROJECT_DIR$/app/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/serializer" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/validator" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-icu" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/monolog-bundle" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/ux-turbo" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/form" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/intl" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/notifier" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/asset" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/app/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/mime" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />

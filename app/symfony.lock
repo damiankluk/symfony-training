@@ -45,18 +45,6 @@
             "branch": "main",
             "version": "1.0",
             "ref": "5e490cc197fb6bb1ae22e5abbc531ddc633b6767"
-        },
-        "files": [
-            "phpstan.dist.neon"
-        ]
-    },
-    "phpstan/phpstan": {
-        "version": "1.10",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "main",
-            "version": "1.0",
-            "ref": "5e490cc197fb6bb1ae22e5abbc531ddc633b6767"
         }
     },
     "phpunit/phpunit": {
@@ -176,18 +164,6 @@
             "config/packages/messenger.yaml"
         ]
     },
-    "symfony/monolog-bundle": {
-        "version": "3.10",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "3.7",
-            "ref": "aff23899c4440dd995907613c1dd709b6f59503f"
-        },
-        "files": [
-            "config/packages/monolog.yaml"
-        ]
-    },
     "symfony/notifier": {
         "version": "7.0",
         "recipe": {
@@ -241,33 +217,6 @@
             "config/routes/security.yaml"
         ]
     },
-    "symfony/stimulus-bundle": {
-        "version": "2.15",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "2.13",
-            "ref": "6acd9ff4f7fd5626d2962109bd4ebab351d43c43"
-        },
-        "files": [
-            "assets/bootstrap.js",
-            "assets/controllers.json",
-            "assets/controllers/hello_controller.js"
-        ]
-    },
-    "symfony/translation": {
-        "version": "7.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "6.3",
-            "ref": "e28e27f53663cc34f0be2837aba18e3a1bef8e7b"
-        },
-        "files": [
-            "config/packages/translation.yaml",
-            "translations/.gitignore"
-        ]
-    },
     "symfony/twig-bundle": {
         "version": "7.0",
         "recipe": {
@@ -280,9 +229,6 @@
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
-    },
-    "symfony/ux-turbo": {
-        "version": "v2.15.0"
     },
     "symfony/validator": {
         "version": "7.0",
