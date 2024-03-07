@@ -27,7 +27,6 @@ USER dev
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY ./app/composer.* ./
+WORKDIR /var/www/html
 
-RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
-workdir /var/www/html
 COPY ./app /var/www/html

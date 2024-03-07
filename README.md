@@ -26,7 +26,10 @@ Follow the steps below to install and run the project:
     ```
     make up
     ```
-   
+5. **Install composer dependencies**
+    ```
+    make composer-install
+    ```
 5. **Go to the web app**
     ```
     localhost:80
